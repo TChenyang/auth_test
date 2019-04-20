@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+         <!DOCTYPE generatorConfiguration
+                 PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+                 "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+
+         <generatorConfiguration>
+         <!--<classPathEntry-->
+                 <!--D:\DEV\Repository\MVN_Repository\mysql\mysql-connector-java\5.1.38-->
+                 <!--location="C:/Oracle/Middleware/wlserver_10.3/server/lib/ojdbc6.jar"/>-->
+                 <!--location="D:/DEV/Repository/MVN_Repository/mysql/mysql-connector-java/5.1.38/mysql-connector-java-5.1.38.jar"/>-->
+         <classPathEntry
+               location="D:/DEV/Repository/MVN_Repository/mysql/mysql-connector-java/5.1.38/mysql-connector-java-5.1.38.jar"/>
+         <context id="my" targetRuntime="MyBatis3">
+             <commentGenerator>
+                 <property name="suppressDate" value="false"/>
+                 <property name="suppressAllComments" value="true"/>
+             </commentGenerator>
+
+             <jdbcConnection driverClass="com.mysql.jdbc.Driver"
+                             connectionURL="jdbc:mysql://localhost:3306/micro_cloud" userId="root"
+                             password="123321"/>
+
+             <javaModelGenerator targetPackage="com.hanzhi.entity"
+                                 targetProject="D:/DEV/WorpkSpace/eclipse/auth_test/src/main/java">
+                 <property name="enableSubPackages" value="true"/>
+                 <property name="trimStrings" value="true"/>
+             </javaModelGenerator>
+
+             <sqlMapGenerator targetPackage="com.hanzhi.dao"
+                              targetProject="D:/DEV/WorpkSpace/eclipse/auth_test/src/main/java">                 <property name="enableSubPackages" value="true"/>
+             </sqlMapGenerator>
+
+                 <javaClientGenerator targetPackage="com.hanzhi.dao"
+                                      targetProject="D:/DEV/WorpkSpace/eclipse/auth_test/src/main/java" type="XMLMAPPER">
+                     <property name="enableSubPackages" value="true"/>
+                 </javaClientGenerator>
+
+                 <!--<table tableName="T_FEE_AGTBILL" domainObjectName="FeeAgentBill"
+36                enableCountByExample="false" enableUpdateByExample="false"
+37                enableDeleteByExample="false" enableSelectByExample="false"
+38                selectByExampleQueryId="false"/>-->
+
+                 <table tableName="t_user" domainObjectName="User"
+                        enableCountByExample="false" enableUpdateByExample="false"
+                        enableDeleteByExample="false" enableSelectByExample="false"
+                        selectByExampleQueryId="false">
+                     <!--<columnRenamingRule searchString="^D_"
+45                                 replaceString=""/>-->
+                 </table>
+
+             </context>
+         </generatorConfiguration>
